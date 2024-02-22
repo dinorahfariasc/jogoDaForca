@@ -1,0 +1,2 @@
+jogo da forca de filmes. pode pedir 3 dicas no maximo, sendo elas, ano, diretor, ator/atriz principal, 
+usar api para ter as info das dicas, recebe os nomes dos filmes 
