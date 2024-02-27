@@ -82,26 +82,11 @@ def display_hangman(chances):
     ]
     return stages[chances]
 
-def display_menu():
-    print('''
-    Bem-vindo(a) ao jogo da forca!
-    Adivinhe o nome do filme!
-    1 - jogar
-    2 - adicionar filme
-    3 - ver filmes
-    4 - sair do jogo
-    ''')
-    
 def jogo():
 
     limpa_tela()
-    display_menu()
-    opcao = input('Digite uma opção: ')
-
-    if opcao == '2':
-        print('adicione um filme\n')
-        filmes.append(input('Digite o nome do filme: ').lower())
-        
+    print("\nBem-vindo(a) ao jogo da forca!")
+    print("Adivinhe o nome do filme!\n")
 
     # lista de filmes
     filmes = ['la la land', 'the handmaiden', 'scream', 'poor things']
@@ -117,7 +102,7 @@ def jogo():
 
     palavra_escondida = ['_' if letra != ' ' else ' ' for letra in palavra ] # operador ternario e comprehension list
     print(palavra_escondida)
-    chances =  6
+    chances =  10
 
     letras_erradas = []
 
@@ -125,7 +110,7 @@ def jogo():
         # print
 
         print(display_hangman(chances))
-
+        
         print(''.join(palavra_escondida))
         print(f'\nChances restantes: {chances}')
         print('Letras erradas', " ".join(letras_erradas))
@@ -160,6 +145,8 @@ def jogo():
         print(f'A filme era: {palavra}')
     
     
+
+
 
 
 if __name__ == "__main__":

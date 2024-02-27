@@ -59,6 +59,7 @@ for x in range(len(searchTerms)):
     # the data I'm asking for. 
     try:
       print("Title: " + movie["l"])
-      print("Image: " + movie["i"]["imageUrl"])
+      print("Year: " + movie["y"])
+      print("Cast: " + movie["s"])
     except:
       pass

@@ -55,10 +55,12 @@ for x in range(len(searchTerms)):
 for x in range(len(searchTerms)):
   print("\n\nSearch Term: \"" + str(searchTerms[x]) + "\"")
   for movie in responses[x]:
+    print(movie)
     # I used try/except here to keep going just incase a movie doesn't have
     # the data I'm asking for. 
     try:
       print("Title: " + movie["l"])
       print("Image: " + movie["i"]["imageUrl"])
+      print("Year: " + movie["y"])
     except:
       pass

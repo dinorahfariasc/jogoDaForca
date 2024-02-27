@@ -23,7 +23,7 @@ headers = {
 }
 
 # These are my keywords I'd like to search for
-searchTerms = ["spider", "ironman", "avengers", "star wars"]
+searchTerms = ['poor things','scream','the handmaiden','la la land']
 
 # I store all the responses in a list
 responses = []
@@ -59,6 +59,7 @@ for x in range(len(searchTerms)):
     # the data I'm asking for. 
     try:
       print("Title: " + movie["l"])
-      print("Image: " + movie["i"]["imageUrl"])
+      print("Year: " + movie["y"])
+      print("Cast: " + movie["s"])
     except:
       pass

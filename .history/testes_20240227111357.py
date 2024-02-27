@@ -14,12 +14,12 @@ import requests
 import json
 
 # Base url that connects us to the server where the movie info is located
-url = "https://imdb8.p.rapidapi.com/auto-complete"
 
-# These headers are used to authenticate your connection
+url = "https://moviesdatabase.p.rapidapi.com/titles/series/%7BseriesId%7D"
+
 headers = {
 	"X-RapidAPI-Key": "40d79ce6f4msh6893b4dcc8e3457p188914jsn0bb67db95879",
-	"X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+	"X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
 }
 
 # These are my keywords I'd like to search for
