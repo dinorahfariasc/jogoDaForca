@@ -150,7 +150,10 @@ def jogo():
     letras_erradas = []
     palavra = palavra.lower()
 
-    while True:
+    opcao = 0
+
+    while opcao not in ['1', '2', '3', '4']:
+        print('Opção inválida!')
         opcao = input('Digite uma opção: ')
         if opcao == '1':
             print('jogar\n')

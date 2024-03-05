@@ -94,7 +94,6 @@ def display_menu():
     ''')
     
 def jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez):
-    print('Vamos começar!')
     while chances > 0:
         # print
 
@@ -140,34 +139,40 @@ def jogo():
     # dicas dos filmes
     infos = {'la la land': ['2016','Damien Chazelle','emma stone, ryan gosling'], 'the handmaiden': ['2016', 'Park Chan-wook', 'Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'scream': ['1996', 'Wes Craven', 'Neve Campbell, Courteney Cox, David Arquette'], 'poor things': ['2023', 'Yorgos Lanthimos', 'Emma Stone, Mark Ruffalo, Willem Dafoe']}
 
-    palavra = random.choice(list(infos.keys()))
+    palavra = random.choice(filmes)
+    palavra = palavra.lower()
+
     dicas = infos[palavra]
     vez = 0
 
     palavra_escondida = ['_' if letra != ' ' else ' ' for letra in palavra ] # operador ternario e comprehension list
-
+    print(palavra_escondida)
     chances =  6
     letras_erradas = []
-    palavra = palavra.lower()
 
-    while True:
-        opcao = input('Digite uma opção: ')
-        if opcao == '1':
-            print('jogar\n')
-            jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez)
-        elif opcao == '2':
-            print('adicione um filme\n')
-            testes.addFilme(infos)
-        elif opcao == '3':
-            print('lista de filmes\n')
-            for filme in infos.keys():
-                print(filme)   
-        elif opcao == '4':
-            print('saindo do jogo...')
-            exit()
+    opcao = input('Digite uma opção: ')
+    if opcao == '1':
+        print('jogar\n')
+        jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez)
 
+    elif opcao == '2':
+        print('adicione um filme\n')
+        testes.addFilme(filmes)
         
+    elif opcao == '3':
+        print('lista de filmes\n')
+        for filme in len(infos.keys()):
+            print(filme)   
+    elif opcao == '4':
+        print('saindo do jogo...')
+        exit()
+
+    
   
 
-jogo()
+
+if __name__ == "__main__":
+    jogo()
+
+    
     

@@ -145,12 +145,14 @@ def jogo():
     vez = 0
 
     palavra_escondida = ['_' if letra != ' ' else ' ' for letra in palavra ] # operador ternario e comprehension list
-
     chances =  6
     letras_erradas = []
     palavra = palavra.lower()
 
-    while True:
+    opcao = input('Digite uma opção: ')
+
+    while opcao not in ['1', '2', '3', '4']:
+        print('Opção inválida!')
         opcao = input('Digite uma opção: ')
         if opcao == '1':
             print('jogar\n')
@@ -160,7 +162,7 @@ def jogo():
             testes.addFilme(infos)
         elif opcao == '3':
             print('lista de filmes\n')
-            for filme in infos.keys():
+            for filme in len(infos.keys()):
                 print(filme)   
         elif opcao == '4':
             print('saindo do jogo...')
