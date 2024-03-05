@@ -12,7 +12,6 @@ def limpa_tela():
 def display_hangman(chances):
     stages = [  # estágio 6 (final)
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -23,7 +22,6 @@ def display_hangman(chances):
                 """,
                 # estágio 5
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -34,7 +32,6 @@ def display_hangman(chances):
                 """,
                 # estágio 4
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -45,7 +42,6 @@ def display_hangman(chances):
                 """,
                 # estágio 3
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -56,7 +52,6 @@ def display_hangman(chances):
                 """,
                 # estágio 2
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -67,7 +62,6 @@ def display_hangman(chances):
                 """,
                 # estágio 1
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -78,7 +72,6 @@ def display_hangman(chances):
                 """,
                 # estágio 0 (inicial)
                 """
-                ==============================
                    --------
                    |      |
                    |      
@@ -128,7 +121,7 @@ def jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez):
                 print('Parabéns! Você ganhou!')
                 break
         elif tentativa == 'dica':
-                # print(dicas[:vez+1]) if vez < 3 else print(f'Você usou todas as dicas!\n{dicas}')
+                print(dicas[:vez+1]) if vez < 3 else print(f'Você usou todas as dicas!\n{dicas}')
                 vez += 1
         else:
             if tentativa in letras_erradas:

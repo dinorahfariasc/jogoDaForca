@@ -12,7 +12,6 @@ def limpa_tela():
 def display_hangman(chances):
     stages = [  # estágio 6 (final)
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -23,7 +22,6 @@ def display_hangman(chances):
                 """,
                 # estágio 5
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -34,7 +32,6 @@ def display_hangman(chances):
                 """,
                 # estágio 4
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -45,7 +42,6 @@ def display_hangman(chances):
                 """,
                 # estágio 3
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -56,7 +52,6 @@ def display_hangman(chances):
                 """,
                 # estágio 2
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -67,7 +62,6 @@ def display_hangman(chances):
                 """,
                 # estágio 1
                 """
-                ==============================
                    --------
                    |      |
                    |      O
@@ -78,7 +72,6 @@ def display_hangman(chances):
                 """,
                 # estágio 0 (inicial)
                 """
-                ==============================
                    --------
                    |      |
                    |      
@@ -110,8 +103,6 @@ def jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez):
         print(''.join(palavra_escondida))
         print(f'\nChances restantes: {chances}')
         print('Letras erradas', " ".join(letras_erradas))
-        if vez != 0:
-            print(f'Dicas: {dicas[:vez]}') if vez < 3 else print(f'Você usou todas as dicas!\n{dicas}')
 
         # input
         tentativa = input('Digite uma letra: ').lower()
@@ -127,15 +118,15 @@ def jogar(palavra, palavra_escondida, chances, letras_erradas, dicas, vez):
                 print(''.join(palavra_escondida))
                 print('Parabéns! Você ganhou!')
                 break
-        elif tentativa == 'dica':
-                # print(dicas[:vez+1]) if vez < 3 else print(f'Você usou todas as dicas!\n{dicas}')
-                vez += 1
         else:
-            if tentativa in letras_erradas:
+            if tentativa == 'dica':
+                print(dicas[vez]) if vez < 3 else print('Você usou todas as dicas!')
+                vez += 1
+            elif tentativa in letras_erradas:
                 print('Você já tentou essa letra!')
             else:
                 letras_erradas.append(tentativa)
-                chances -= 1
+            chances -= 1
                   
     if chances == 0:
         print('\nVocê perdeu!')
@@ -146,7 +137,7 @@ def jogo():
     display_menu()
     
     # dicas dos filmes
-    infos = {'la la land': ['Ano: 2016','Diretor: Damien Chazelle','Cast: emma stone, ryan gosling'], 'the handmaiden': ['Ano: 2016', 'Diretor: Park Chan-wook', 'Cast: Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'scream': ['Ano: 1996', 'Diretor: Wes Craven', 'Cast: Neve Campbell, Courteney Cox, David Arquette'], 'poor things': ['Ano: 2023', 'Diretor: Yorgos Lanthimos', 'Cast: Emma Stone, Mark Ruffalo, Willem Dafoe']}
+    infos = {'la la land': ['2016','Damien Chazelle','emma stone, ryan gosling'], 'the handmaiden': ['2016', 'Park Chan-wook', 'Kim Min-hee, Ha Jung-woo, Cho Jin-woong'], 'scream': ['1996', 'Wes Craven', 'Neve Campbell, Courteney Cox, David Arquette'], 'poor things': ['2023', 'Yorgos Lanthimos', 'Emma Stone, Mark Ruffalo, Willem Dafoe']}
 
     while True:  
 
